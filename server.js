@@ -2,7 +2,8 @@
 var prerender = require('./lib');
 
 var server = prerender({
-    chromeLocation: '/app/.apt/usr/bin/google-chrome'
+    chromeLocation: '/app/.apt/usr/bin/google-chrome',
+    chromeFlags: ['--no-sandbox', '--headless', '--disable-gpu', '--remote-debugging-port=9222', '--hide-scrollbars']
 });
 
 server.use(prerender.sendPrerenderHeader());
